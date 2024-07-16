@@ -1,0 +1,43 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', 'App\Http\Controllers\AuthController@user_data_index');
+Route::get('index', 'App\Http\Controllers\AuthController@user_data_index');
+Route::get('login', 'App\Http\Controllers\AuthController@check_login');
+Route::post('login', 'App\Http\Controllers\AuthController@login');
+Route::get('new_account', 'App\Http\Controllers\AuthController@check_new_account');
+Route::post('new_account', 'App\Http\Controllers\AuthController@new_account');
+Route::get('logout', 'App\Http\Controllers\AuthController@logout');
+Route::get('change_password', 'App\Http\Controllers\AuthController@change_pss');
+Route::post('change_password', 'App\Http\Controllers\AuthController@change_password');
+Route::get('fetch_tour', 'App\Http\Controllers\FetchController@fetch_api_tour');
+Route::get('fetch_hotel/{check_in}/{check_out}/{adults}/{room}', 'App\Http\Controllers\FetchController@fetch_api_hotel');
+Route::get('fetch_artsy/{artist_name?}/{artist_id?}', 'App\Http\Controllers\FetchController@fetch_api_artsy');
+Route::get('fetch_images/{section}', 'App\Http\Controllers\FetchController@fetch_images');
+Route::get('fetch_collection/{category?}', 'App\Http\Controllers\FetchController@fetch_collection');
+Route::get('fetch_favourites', 'App\Http\Controllers\FetchController@fetch_favourites');
+Route::get('fetch_notifications/{hide?}', 'App\Http\Controllers\FetchController@fetch_notifications');
+Route::get('fetch_myoffers', 'App\Http\Controllers\FetchController@fetch_myoffers');
+Route::get('fetch_auction/{id?}/{user_id?}', 'App\Http\Controllers\FetchController@fetch_auction');
+Route::get('fetch_saved_unsaved_tour/{id_remove?}', 'App\Http\Controllers\FetchController@fetch_saved_unsaved_tour');
+Route::get('fetch_check_expires', 'App\Http\Controllers\FetchController@fetch_check_expires');
+Route::post('fetch_save_tour', 'App\Http\Controllers\FetchController@fetch_save_tour');
+Route::get('fetch_show_like/{id_collection}', 'App\Http\Controllers\FetchController@fetch_show_like');
+Route::get('fetch_category_collection', 'App\Http\Controllers\FetchController@fetch_category_collection');
+Route::get('fetch_add_remove_like/{id_collection}', 'App\Http\Controllers\FetchController@fetch_add_remove_like');
+Route::get('failed_email', 'App\Http\Controllers\MainController@failed_mail');
+Route::get('success_email', 'App\Http\Controllers\MainController@success_mail');
+Route::get('check_email/{q}', 'App\Http\Controllers\FetchController@check_email');
+Route::get('personal_area', 'App\Http\Controllers\AuthController@user_data_personal');
+Route::get('collection', 'App\Http\Controllers\MainController@collection');
+Route::get('new_auction', 'App\Http\Controllers\AuctionController@check');
+Route::post('new_auction', 'App\Http\Controllers\AuctionController@new_auction');
+Route::get('running_auction', 'App\Http\Controllers\MainController@running_auction');
+Route::get('info_collection/{id}', 'App\Http\Controllers\MainController@info_collection');
+Route::get('info_auction/{id}', 'App\Http\Controllers\MainController@info_auction')->name('info_auction');
+Route::post('info_auction/{id}', 'App\Http\Controllers\AuctionController@new_offer')->name('new_offer');
+Route::get('forgot_password', 'App\Http\Controllers\MainController@forgot_password');
+Route::post('forgot_password', 'App\Http\Controllers\AuthController@forgot_password');
+Route::get('reset_password', 'App\Http\Controllers\MainController@reset_password');
+Route::post('reset_password', 'App\Http\Controllers\AuthController@reset_password');
