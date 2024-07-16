@@ -1,0 +1,132 @@
+html{
+    font-size: 16px;
+}
+
+body{
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Usa il colore del testo del contesto genitore */
+}
+
+#background{
+    background-color:  #8fc421;
+    width: 100%;
+    height: 100vh;
+    padding: 2.6% 0px;
+}
+
+#main{
+    display: flex;
+    justify-content: center;
+    margin: 0px 10.9%;
+}
+
+#new_auction{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    width: 39%;
+    height: 550px;
+    padding: 2.6% 4%;
+    border: 3px solid black;
+}
+
+
+#new_auction form{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+#logo{
+    width: 209px;
+    height: 53px;
+}
+
+#main h1{
+    font-family: "Lalezar", system-ui;
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 24px;   
+    font-size: clamp(14px, 2vw, 1.7rem);  
+}
+
+
+#new_auction a{
+    font-family: "Ysabeau Infant", sans-serif;
+    font-weight: 700;
+    line-height: 22px;
+    font-size: clamp(12px, 2vw, 1.3rem); 
+    width: fit-content;
+    padding-bottom: 4px;
+}
+
+
+#new_auction a:hover{
+    cursor: pointer;
+    border-bottom: 2px solid black;
+}
+
+#new_auction .input{
+    font-family: "Ysabeau Infant", sans-serif;
+    font-size: clamp(15px, 2vw, 1.3rem) !important; 
+    border: none;
+    border-bottom: 3px solid black;
+    outline: none;
+}
+
+#new_auction .button{
+    width: fit-content;
+    background-color: black;
+    border-radius: 0px;
+    font-family: "Lalezar", system-ui;
+    font-weight: 400;
+    font-size: clamp(16px, 2vw, 1.5rem) !important; 
+    color: white;
+    border: 0px;
+}
+
+#new_auction .button:hover{
+    transform: scale(1.03); /* Ingrandisce leggermente al passaggio */
+}
+
+.error_php{
+    margin: 0px;
+    color: #ec5252;
+    font-size: clamp(14px, 2vw, 1.3rem) !important; 
+    font-family: "Lalezar", system-ui;
+    font-weight: 400;
+    line-height: 15px; 
+}
+
+
+@media (max-width: 650px) {
+    #new_auction{
+        width: 280px;
+        height: 350px;
+    }
+
+    #logo{
+        width: 140px;
+        height: 35px;
+        object-fit: cover;
+    }
+
+    #main{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 90%;
+        margin: 0px;
+    }
+}
